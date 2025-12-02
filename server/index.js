@@ -13,8 +13,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://ibrag1.github.io"
-  ]
+    "https://ibrag1.github.io"]
 }));
 
 // Asegúrate de tener este middleware para parsear JSON

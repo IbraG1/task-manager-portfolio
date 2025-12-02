@@ -5,7 +5,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
-  const API_URL = 'https://task-backend-4woc.onrender.com/tasks';
+  const API_URL = 'https://task-backend-4woc.onrender.com/api/tasks';
 
   // 1. Cargar tareas al iniciar
   useEffect(() => {
