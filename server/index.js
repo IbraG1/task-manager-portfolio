@@ -31,12 +31,12 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('❌ Error de conexión a MongoDB:', err));
 
 // Ruta de prueba
-app.get('/api/test', (req, res) => {
+app.get('/test', (req, res) => {
   res.json({ message: '¡El servidor está funcionando correctamente! 🚀' });
 });
 
 // Obtener todas las tareas
-app.get('/api/tasks', async (req, res) => {
+app.get('/tasks', async (req, res) => {
   try {
     const tasks = await Task.find().sort({ createdAt: -1 });
     res.json(tasks);
@@ -47,7 +47,7 @@ app.get('/api/tasks', async (req, res) => {
 });
 
 // Crear una nueva tarea
-app.post('/api/tasks', async (req, res) => {
+app.post('/tasks', async (req, res) => {
   try {
     if (!req.body.title) {
       return res.status(400).json({ error: 'El título es requerido' });
