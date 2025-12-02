@@ -67,7 +67,7 @@ app.post('/api/tasks', async (req, res) => {
 });
 
 // Actualizar una tarea (marcar como completada/no completada)
-app.put('/api/tasks/:id', async (req, res) => {
+app.put('/tasks/:id', async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
     if (!task) {
@@ -84,7 +84,7 @@ app.put('/api/tasks/:id', async (req, res) => {
 });
 
 // Eliminar una tarea
-app.delete('/api/tasks/:id', async (req, res) => {
+app.delete('/tasks/:id', async (req, res) => {
   try {
     const deletedTask = await Task.findByIdAndDelete(req.params.id);
     if (!deletedTask) {
