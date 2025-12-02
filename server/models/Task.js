@@ -7,7 +7,7 @@ const TaskSchema = new mongoose.Schema({
     },
     done: {
         type: Boolean,
-        default: false // Por defecto, la tarea no está terminada
+        default: false
     }
 });
 
