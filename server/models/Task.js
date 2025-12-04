@@ -7,7 +7,7 @@ const TaskSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['trabajo', 'Personal', 'Estudio', 'otro'],
+        enum: ['Trabajo', 'Personal', 'Estudio', 'Otro'],
         default: 'Personal'
     },
     done: {
