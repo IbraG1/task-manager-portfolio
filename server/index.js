@@ -58,7 +58,6 @@ app.post('/tasks', async (req, res) => {
       category: req.body.category,
       done: false
     });
-    
     const savedTask = await newTask.save();
     res.status(201).json(savedTask);
   } catch (error) {
