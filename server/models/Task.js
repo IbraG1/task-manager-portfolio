@@ -5,9 +5,18 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true // Obligatorio tener título
     },
+    category: {
+        type: String,
+        enum: ['trabajo', 'Personal', 'Estudio', 'otro'],
+        default: 'Personal'
+    },
     done: {
         type: Boolean,
         default: false
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now
     }
 });
 
