@@ -55,6 +55,7 @@ app.post('/tasks', async (req, res) => {
     
     const newTask = new Task({
       title: req.body.title,
+      category: req.body.category,
       done: false
     });
     
