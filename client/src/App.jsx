@@ -28,7 +28,7 @@ function App() {
     if (!newTask.trim()) return;
     try {
       console.log("Enviando tarea a:", API_URL);
-      const res = await axios.post(API_URL, { title: newTask }, {
+      const res = await axios.post(API_URL, { title: newTask, category: category }, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -36,6 +36,7 @@ function App() {
       console.log("Respuesta del servidor:", res);
       setTasks([...tasks, res.data]);
       setNewTask('');
+      setCategory('personal');
     } catch (error) {
       console.error("Error completo:", {
         message: error.message,
